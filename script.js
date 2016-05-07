@@ -101,7 +101,7 @@
             }
         }, false);
         // FIXME: This line makes the randomise function execute again on DOM load.
-        document.addEventListener("touchdown", function(event) {
+        document.addEventListener("touchend", function(event) {
             event.preventDefault();
             randomise();
         }, false);
@@ -190,9 +190,21 @@
 
     // Debug
     debug = window.debug || {};
-    debug.checkLength = function() {
+
+    // Check to see if any quote is bigger than 130 characters long. (Twitter
+    // has a max 140 characters policy, and we also need to add the hashtag)
+    debug.quotesLength = () => {
+        let removable = [];
         for (var i = 0; i < quotes.length; i++) {
-            if (quotes[i].quote.length > 130) console.log(quotes[i].quote + " - " + quotes[i].quote.length);
+            if (quotes[i].quote.length > 130) {
+                removable.push(quotes[i].quote.length + " - " + quotes[i].quote);
+            }
         }
+
+        if (removable.length < 1) {
+            return console.log("All quotes are under 130 characters.");
+        }
+
+        return removable;
     };
 })();
