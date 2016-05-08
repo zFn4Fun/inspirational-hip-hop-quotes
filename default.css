@@ -20,8 +20,6 @@ body {
   -khtml-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  /* FIXME: background-image is not amitable, need to find a workaround */
-  transition: background-image 0.2s ease-in-out;
 }
 
 p, h2 {
@@ -67,19 +65,6 @@ p, h2 {
   vertical-align: top;
 }
 
-footer {
-  background-color: #000;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  height: 35px;
-  margin-bottom: 10px;
-  width: 100%;
-  z-index: 99;
-  opacity: 0.7;
-  padding-top: 10px;
-}
-
 @media (max-width: 768px) {
   .quote {
     font-size: 17px;
@@ -87,13 +72,6 @@ footer {
 
   .author {
     font-size: 15px;
-  }
-
-  footer {
-    font-size: 14.4px;
-	height: 25px;
-	padding-top: 5px;
-	margin-bottom: 5px;
   }
 }
 
@@ -105,14 +83,8 @@ footer {
   .author {
     font-size: 19px;
   }
-
-  footer {
-    font-size: 15px;
-	height: 28px;
-	padding-top: 6px;
-	margin-bottom: 6px;
-  }
 }
+
 @media (min-width: 992px) and (max-width: 1199px) {
   .quote {
     font-size: 22px;
