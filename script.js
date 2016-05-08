@@ -59,8 +59,20 @@
         quote: "Follow your heart. Don't follow what you've been told you're supposed to do.",
         author: "J. Cole",
         imgSrc: "jcole.png"
+    }, {
+        quote: "",
+        author: "Ab-Soul",
+        imgSrc: "absoul.jpg"
+    }, {
+        quote: "",
+        author: "Isaiah Rashad",
+        imgSrc: "isaiah.png"
+    }, {
+        quote: "",
+        author: "Flatbush Zombies",
+        imgSrc: "fbz.jpg"
     }, ];
-    var lastQuote;
+    var lastQuote = 0;
     var repeated = 0;
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -83,22 +95,22 @@
     });
 
     function randomise(type) {
-        var selectedQuote = Math.floor(Math.random() * quotes.length);
-        if (type === "firstload") updatePage(selectedQuote);
-        else {
-            updateTwitter(quotes[selectedQuote].quote);
+        var selectedQuote = Math.floor(Math.random() * 2);
+        if (type === "firstload") {
+            updatePage(selectedQuote);
+            lastQuote = selectedQuote;
+        } else if (lastQuote === selectedQuote) {
+            randomise();
+            repeated++;
+            console.log("rerolling - " + repeated);
+        } else {
+            //updateTwitter(quotes[selectedQuote].quote);
             fadeOut(document.getElementById("content"));
             setTimeout(function() {
                 fadeIn(document.getElementById("content"));
                 console.log(selectedQuote);
-                if (selectedQuote !== lastQuote) {
-                    lastQuote = selectedQuote;
-                    updatePage(selectedQuote);
-                } else {
-                    repeated++;
-                    console.log("rerolling - " + repeated);
-                    randomise("firstload");
-                }
+                lastQuote = selectedQuote;
+                updatePage(selectedQuote);
             }, 1000);
         }
     }
