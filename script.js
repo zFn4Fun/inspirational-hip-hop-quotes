@@ -93,7 +93,7 @@
 
     document.addEventListener("DOMContentLoaded", function() {
         console.log("dom loaded");
-        randomise();
+        randomise("firstload");
         document.addEventListener("mouseup", function(eventData) {
             // Change the quote only on left click.
             if (eventData.button === 0) {
@@ -110,27 +110,32 @@
         });
     });
 
-    //FIXME: There seems to be some issues with reroling and the fade stuff.
-    function randomise() {
-        console.log("called randomise");
+    function randomise(type) {
         var selectedQuote = Math.floor(Math.random() * quotes.length);
-        updateTwitter(quotes[selectedQuote].quote);
-        fadeOut(document.getElementById("content"));
-        setTimeout(function() {
-            fadeIn(document.getElementById("content"));
-            console.log(selectedQuote);
-            if (selectedQuote !== lastQuote) {
-                lastQuote = selectedQuote;
-                document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
-                document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
-                document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/" + quotes[selectedQuote].imgSrc + "')";
-            } else {
-                repeated++;
-                console.log("rerolling - " + repeated);
-                randomise();
-            }
-        }, 800);
+        if (type === "firstload") updatePage(selectedQuote);
+        else {
+            updateTwitter(quotes[selectedQuote].quote);
+            fadeOut(document.getElementById("content"));
+            setTimeout(function() {
+                fadeIn(document.getElementById("content"));
+                console.log(selectedQuote);
+                if (selectedQuote !== lastQuote) {
+                    lastQuote = selectedQuote;
+                    updatePage(selectedQuote);
+                } else {
+                    repeated++;
+                    console.log("rerolling - " + repeated);
+                    randomise("firstload");
+                }
+            }, 1000);
+        }
     }
+
+    var updatePage = function(selectedQuote) {
+        document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
+        document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/" + quotes[selectedQuote].imgSrc + "')";
+    };
 
     function updateTwitter(quote) {
         console.log("called updateTwitter");
@@ -193,8 +198,8 @@
 
     // Check to see if any quote is bigger than 130 characters long. (Twitter
     // has a max 140 characters policy, and we also need to add the hashtag)
-    debug.quotesLength = () => {
-        let removable = [];
+    debug.quotesLength = function() {
+        var removable = [];
         for (var i = 0; i < quotes.length; i++) {
             if (quotes[i].quote.length > 130) {
                 removable.push(quotes[i].quote.length + " - " + quotes[i].quote);
