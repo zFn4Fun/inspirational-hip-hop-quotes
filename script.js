@@ -59,6 +59,18 @@
         quote: "Follow your heart. Don't follow what you've been told you're supposed to do.",
         author: "J. Cole",
         imgSrc: "jcole.png"
+    }, {
+        quote: "",
+        author: "Ab-Soul",
+        imgSrc: "absoul.jpg"
+    }, {
+        quote: "",
+        author: "Isaiah Rashad",
+        imgSrc: "isaiah.png"
+    }, {
+        quote: "",
+        author: "Flatbush Zombies",
+        imgSrc: "fbz.jpg"
     }];
     var lastQuote = 0;
     var repeated = 0;
