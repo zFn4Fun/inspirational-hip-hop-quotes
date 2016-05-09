@@ -82,6 +82,7 @@
     function randomise(type) {
         var selectedQuote = Math.floor(Math.random() * quotes.length);
         if (type === "firstload") {
+            fadeIn(document.getElementById("content"));
             updatePage(selectedQuote);
             lastQuote = selectedQuote;
         } else if (lastQuote === selectedQuote) {
@@ -169,7 +170,7 @@
     // has a max 140 characters policy, and we also need to add the hashtag)
     debug.quotesLength = function() {
         var removable = [];
-        for (var i = 0; i < quotes.length; i++) {
+        for (i in quotes) {
             if (quotes[i].quote.length > 130) {
                 removable.push(quotes[i].quote.length + " - " + quotes[i].quote);
             }
@@ -180,5 +181,9 @@
         }
 
         return removable;
+    };
+
+    debug.countQuotes = function() {
+        return quotes.length;
     };
 })();
