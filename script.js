@@ -170,7 +170,7 @@
     // has a max 140 characters policy, and we also need to add the hashtag)
     debug.quotesLength = function() {
         var removable = [];
-        for (i in quotes) {
+        for (var i in quotes) {
             if (quotes[i].quote.length > 130) {
                 removable.push(quotes[i].quote.length + " - " + quotes[i].quote);
             }
