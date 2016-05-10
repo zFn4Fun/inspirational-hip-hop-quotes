@@ -85,13 +85,11 @@
             }
         }, false);
         // FIXME: This line makes the randomise function execute again on DOM load.
-        document.addEventListener("touchend", function(event) {
-            event.preventDefault();
-            randomise();
-        }, false);
+        document.addEventListener("touchend", randomise, false);
     });
 
     function randomise(type) {
+        console.log("randomise fired");
         var selectedQuote = Math.floor(Math.random() * quotes.length);
         if (type === "firstload") {
             document.getElementsByClassName("island")[0].style.opacity = 1;
