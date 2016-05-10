@@ -8,7 +8,6 @@ body {
   text-align: center;
   margin: 0;
   padding: 0;
-  z-index: -1;
   background-color: #333;
   background: no-repeat center center relative;
   -webkit-background-size: cover;
@@ -28,6 +27,7 @@ p, h2 {
 }
 
 .island {
+  opacity: 0;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -41,6 +41,7 @@ p, h2 {
   background-color: rgba(0, 0, 0, 0.26);
   border-radius: 8px;
   padding: 6px;
+  transition: opacity 1s ease;
 }
 
 .quote {

@@ -72,7 +72,7 @@
         author: "Flatbush Zombies",
         imgSrc: "fbz.jpg"
     }];
-    var lastQuote = 0;
+    var lastQuote;
     var repeated = 0;
 
     document.addEventListener("DOMContentLoaded", function() {
@@ -94,7 +94,7 @@
     function randomise(type) {
         var selectedQuote = Math.floor(Math.random() * quotes.length);
         if (type === "firstload") {
-            fadeIn(document.getElementById("content"));
+            document.getElementsByClassName("island")[0].style.opacity = 1;
             updatePage(selectedQuote);
             lastQuote = selectedQuote;
         } else if (lastQuote === selectedQuote) {
@@ -103,9 +103,9 @@
             console.log("rerolling - " + repeated);
         } else {
             //updateTwitter(quotes[selectedQuote].quote);
-            fadeOut(document.getElementById("content"));
+            document.getElementsByClassName("island")[0].style.opacity = 0;
             setTimeout(function() {
-                fadeIn(document.getElementById("content"));
+                document.getElementsByClassName("island")[0].style.opacity = 1;
                 console.log(selectedQuote);
                 lastQuote = selectedQuote;
                 updatePage(selectedQuote);
@@ -146,33 +146,6 @@
         } else {
             document.getElementsByClassName("twitter-share-button")[0].dataset.text = '"' + quote + '"';
         }
-    }
-
-    // fade out
-    function fadeOut(el) {
-        el.style.opacity = 1;
-
-        (function fade() {
-            if ((el.style.opacity -= 0.03) < 0) {
-                el.style.display = "none";
-            } else {
-                requestAnimationFrame(fade);
-            }
-        })();
-    }
-
-    // fade in
-    function fadeIn(el) {
-        el.style.opacity = 0;
-        el.style.display = "inline-block";
-
-        (function fade() {
-            var val = parseFloat(el.style.opacity);
-            if (!((val += 0.03) > 1)) {
-                el.style.opacity = val;
-                requestAnimationFrame(fade);
-            }
-        })();
     }
 
     // Debug
