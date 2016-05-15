@@ -71,6 +71,14 @@
         quote: "",
         author: "Flatbush Zombies",
         imgSrc: "fbz.jpg"
+    }, {
+        quote: "You can make something of your life, it just depends on you drive.",
+        author: "Eminem",
+        imgSrc: "eminem.jpg"
+    }, {
+        quote: "Leave the past in the past, tomorrow is not promised, and today is just a gift, I guess that's why it's the present.",
+        author: "Joe Budden",
+        imgSrc: "joebudden.jpg"
     }];
     var lastQuote;
     var repeated = 0;
@@ -84,7 +92,6 @@
                 randomise();
             }
         }, false);
-        // FIXME: This line makes the randomise function execute again on DOM load.
         document.addEventListener("touchend", randomise, false);
     });
 
@@ -100,8 +107,10 @@
             repeated++;
             console.log("rerolling - " + repeated);
         } else {
-            //updateTwitter(quotes[selectedQuote].quote);
             document.getElementsByClassName("island")[0].style.opacity = 0;
+            setTimeout(function() {
+                updateTwitter(quotes[selectedQuote].quote);
+            }, 700);
             setTimeout(function() {
                 document.getElementsByClassName("island")[0].style.opacity = 1;
                 console.log(selectedQuote);
@@ -117,7 +126,7 @@
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/" + quotes[selectedQuote].imgSrc + "')";
     };
 
-    function updateTwitter(quote) {
+    function updateTwitter(selectedQuote) {
         console.log("called updateTwitter");
         if (document.querySelector("iframe")) {
             var parent = document.getElementById("btn-twitter");
@@ -131,7 +140,7 @@
             // Empty the nodes.
             parent.textContent = "";
 
-            newBtn.dataset.text = '"' + quote + '"';
+            newBtn.dataset.text = '"' + selectedQuote + '"';
             newBtn.dataset.hashtags = "HHQuotes";
 
             newBtn.className = "twitter-share-button";
@@ -149,8 +158,8 @@
     // Debug
     debug = window.debug || {};
 
-    // Check to see if any quote is bigger than 130 characters long. (Twitter
-    // has a max 140 characters policy, and we also need to add the hashtag)
+    // Checks to see if any of the quotes are bigger than 130 characters long.
+    // (Twitter has a max 140 chars policy, and we also need to add the hashtag)
     debug.quotesLength = function() {
         var removable = [];
         for (var i in quotes) {
@@ -166,6 +175,7 @@
         return removable;
     };
 
+    // Returns the number of quotes inside the quotes array.
     debug.countQuotes = function() {
         return quotes.length;
     };
