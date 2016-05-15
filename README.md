@@ -8,14 +8,15 @@ This is a Random Quote Machine composed of inspirational quotes from various
 Hip Hop artists that came up from nothing and ended up "making it", as a
 reminder that everything is possible.
 
-The quotes are accompanied by a background picture of the artist it originated
+Every quote is accompanied by a background image of the artist it originated
 from.
 
 ## Purpose
 
-This was made as part of my portfolio, and to practice JavaScript, HTML5, CSS3
-and Media Queries. It was also my first project to integrate the Twitter and
-Facebook buttons.
+This was made as part of my portfolio. The main reason for it was to practice
+JavaScript, HTML5, CSS3 and Media Queries.
+It was also my first project to integrate the Twitter and Facebook buttons, and
+my first attempt at Babel, the Gulp taskrunner, and the NPM/Node ecosystem.
 
 ## Credits
 
