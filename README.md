@@ -13,8 +13,8 @@ from.
 
 ## Purpose
 
-This was made as part of my portfolio. The main reason for it was to practice
-JavaScript, HTML5, CSS3 and Media Queries.
+This project was made as part of my portfolio. The main reason for its creation
+was to practice JavaScript, HTML5, CSS3 and Media Queries.
 It was also my first project to integrate the Twitter and Facebook buttons, and
 my first attempt at Babel, the Gulp taskrunner, and the NPM/Node ecosystem.
 
