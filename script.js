@@ -103,6 +103,22 @@
         quote: "You can make the future, but it starts leaving the past.",
         author: "Immortal Technique",
         imgSrc: "immortaltechnique.jpg"
+    }, {
+        quote: "The only difference between a winner and a loser is a winner plays until he wins.",
+        author: "BIG K.R.I.T.",
+        imgSrc: "bigkrit.jpg"
+    }, {
+        quote: "Apply yourself to supply your wealth, only Limitations you’ll ever have are those you Place upon yourself.",
+        author: "Kendrick Lamar",
+        imgSrc: "kdot.jpg"
+    }, {
+        quote: "I can only build if I tear the walls down. Even if it breaks me I won't let it make me frown. I'm falling but no matter how hard I hit the ground, I'll still smile.",
+        author: "Eyedea",
+        imgSrc: "eyedea.jpg"
+    }, {
+        quote: "They say anythings possible, you gotta dream like you never seen obstacles.",
+        author: "J. Cole",
+        imgSrc: "jcole.png"
     }];
     var lastQuote;
     var repeated = 0;
