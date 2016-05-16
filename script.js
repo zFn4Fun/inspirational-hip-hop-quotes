@@ -79,6 +79,30 @@
         quote: "Leave the past in the past, tomorrow is not promised, and today is just a gift, I guess that's why it's the present.",
         author: "Joe Budden",
         imgSrc: "joebudden.jpg"
+    }, {
+        quote: "Reach for the stars so if you fall you land on a cloud.",
+        author: "Kanye West",
+        imgSrc: "kanyewest.jpg"
+    }, {
+        quote: "I will not lose, for even in defeat, there’s a valuable lesson learned, so it evens up for me.",
+        author: "Jay-Z",
+        imgSrc: "jayz.jpg"
+    }, {
+        quote: "Remind yourself, nobody built like you, you design yourself.",
+        author: "Jay-Z",
+        imgSrc: "jayz.jpg"
+    }, {
+        quote: "Turnin' nothin' into somethin' is God work, and you get nothin' without struggle and hard work.",
+        author: "Nas",
+        imgSrc: "nas.jpg"
+    }, {
+        quote: "The victory’s found in truth, like innocence found in youth, self defeat is your own dispute",
+        author: "Damnian Marley",
+        imgSrc: "damnianmarley.jpg"
+    }, {
+        quote: "You can make the future, but it starts leaving the past.",
+        author: "Immortal Technique",
+        imgSrc: "immortaltechnique.jpg"
     }];
     var lastQuote;
     var repeated = 0;
