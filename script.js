@@ -86,11 +86,11 @@
     }, {
         quote: "I will not lose, for even in defeat, there’s a valuable lesson learned, so it evens up for me.",
         author: "Jay-Z",
-        imgSrc: "jayz.jpg"
+        imgSrc: "jayz.jpeg"
     }, {
         quote: "Remind yourself, nobody built like you, you design yourself.",
         author: "Jay-Z",
-        imgSrc: "jayz.jpg"
+        imgSrc: "jayz.jpeg"
     }, {
         quote: "Turnin' nothin' into somethin' is God work, and you get nothin' without struggle and hard work.",
         author: "Nas",
