@@ -1,4 +1,4 @@
-# Random Hip Hop Quotes
+# Inspirational Hip Hop Quotes
 
 [Live Demo](http://zfn4fun.github.io/projects/hhquotes)
 
