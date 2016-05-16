@@ -122,6 +122,7 @@
     function randomise(type) {
         console.log("randomise fired");
         var selectedQuote = Math.floor(Math.random() * quotes.length);
+
         if (type === "firstload") {
             document.getElementsByClassName("island")[0].style.opacity = 1;
             updatePage(selectedQuote);
@@ -193,7 +194,7 @@
         }
 
         if (removable.length < 1) {
-            return console.log("All quotes are under 130 characters.");
+            return "All quotes are under 130 characters.";
         }
 
         return removable;
@@ -202,5 +203,19 @@
     // Returns the number of quotes inside the quotes array.
     debug.countQuotes = function() {
         return quotes.length;
+    };
+
+    // Searches for the author in the quotes array and returns the position of
+    // his quotes.
+    debug.searchQuotes = function(string) {
+        var matches = [];
+        var author = string.toLowerCase();
+
+        for (var i = 0; i < quotes.length; i++) {
+            if (author === quotes[i].author.toLowerCase()) matches.push(i);
+        }
+
+        if (matches.length < 1) return "No matches found";
+        return matches;
     };
 })();
