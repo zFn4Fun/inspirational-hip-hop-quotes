@@ -164,7 +164,7 @@
     var updatePage = function(selectedQuote) {
         document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
         document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
-        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/" + quotes[selectedQuote].imgSrc + "')";
+        document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/" + quotes[selectedQuote].imgSrc + "')";
     };
 
     function updateTwitter(selectedQuote) {
