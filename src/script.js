@@ -105,7 +105,7 @@
         imgSrc: "immortaltechnique.jpg"
     }, {
         quote: "The only difference between a winner and a loser is a winner plays until he wins.",
-        author: "BIG K.R.I.T.",
+        author: "Big K.R.I.T.",
         imgSrc: "bigkrit.jpg"
     }, {
         quote: "Apply yourself to supply your wealth, only Limitations you’ll ever have are those you Place upon yourself.",
@@ -116,7 +116,7 @@
         author: "Eyedea",
         imgSrc: "eyedea.jpg"
     }, {
-        quote: "They say anythings possible, you gotta dream like you never seen obstacles.",
+        quote: "They say anything's possible, you gotta dream like you never seen obstacles.",
         author: "J. Cole",
         imgSrc: "jcole.png"
     }];
