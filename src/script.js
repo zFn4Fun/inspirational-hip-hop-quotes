@@ -60,7 +60,7 @@
         author: "J. Cole",
         imgSrc: "jcole.png"
     }, {
-        quote: "",
+        quote: "Don't be dethroned by these systems of control, just keep your fingers crossed and get them locks off your soul.",
         author: "Ab-Soul",
         imgSrc: "absoul.jpg"
     }, {
@@ -112,13 +112,13 @@
         author: "Kendrick Lamar",
         imgSrc: "kdot.jpg"
     }, {
-        quote: "I can only build if I tear the walls down. Even if it breaks me I won't let it make me frown. I'm falling but no matter how hard I hit the ground, I'll still smile.",
-        author: "Eyedea",
-        imgSrc: "eyedea.jpg"
-    }, {
         quote: "They say anything's possible, you gotta dream like you never seen obstacles.",
         author: "J. Cole",
         imgSrc: "jcole.png"
+    }, {
+        quote: "Get up off that slave ship, build your own pyramids, write your own hieroglyphs.",
+        author: "Kendrick Lamar",
+        imgSrc: "kdot.jpg"
     }];
     var lastQuote;
     var repeated = 0;
@@ -209,10 +209,7 @@
             }
         }
 
-        if (removable.length < 1) {
-            return "All quotes are under 130 characters.";
-        }
-
+        if (removable.length < 1) return "All quotes are under 130 characters.";
         return removable;
     };
 
