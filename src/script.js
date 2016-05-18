@@ -1,5 +1,5 @@
 (function() {
-    var quotes = [{
+    const quotes = [{
         quote: "Never looking back or too far in front of me. The present is a gift and I just wanna BE.",
         author: "Common",
         imgSrc: "common.jpg"
@@ -120,24 +120,22 @@
         author: "Kendrick Lamar",
         imgSrc: "kdot.jpg"
     }];
-    var lastQuote;
-    var repeated = 0;
+    let lastQuote;
+    let repeated = 0;
 
     document.addEventListener("DOMContentLoaded", function() {
         console.log("dom loaded");
         randomise("firstload");
         document.addEventListener("mouseup", function(eventData) {
             // Change the quote only on left click.
-            if (eventData.button === 0) {
-                randomise();
-            }
+            if (eventData.button === 0) randomise();
         }, false);
         document.addEventListener("touchend", randomise, false);
     });
 
-    function randomise(type) {
+    let randomise = (type) => {
         console.log("randomise fired");
-        var selectedQuote = Math.floor(Math.random() * quotes.length);
+        const selectedQuote = Math.floor(Math.random() * quotes.length);
 
         if (type === "firstload") {
             document.getElementsByClassName("island")[0].style.opacity = 1;
@@ -161,13 +159,13 @@
         }
     }
 
-    var updatePage = function(selectedQuote) {
+    let updatePage = (selectedQuote) => {
         document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
         document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/" + quotes[selectedQuote].imgSrc + "')";
     };
 
-    function updateTwitter(selectedQuote) {
+    let updateTwitter = (selectedQuote) => {
         console.log("called updateTwitter");
         if (document.querySelector("iframe")) {
             var parent = document.getElementById("btn-twitter");
@@ -197,13 +195,13 @@
     }
 
     // Debug
-    debug = window.debug || {};
+    window.debug = window.debug || {};
 
     // Checks to see if any of the quotes are bigger than 130 characters long.
     // (Twitter has a max 140 chars policy, and we also need to add the hashtag)
-    debug.quotesLength = function() {
-        var removable = [];
-        for (var i in quotes) {
+    debug.quotesLength = () => {
+        let removable = [];
+        for (let i in quotes) {
             if (quotes[i].quote.length > 130) {
                 removable.push(quotes[i].quote.length + " - " + quotes[i].quote);
             }
@@ -214,17 +212,17 @@
     };
 
     // Returns the number of quotes inside the quotes array.
-    debug.countQuotes = function() {
+    debug.countQuotes = () => {
         return quotes.length;
     };
 
     // Searches for the author in the quotes array and returns the position of
     // his quotes.
-    debug.searchQuotes = function(string) {
-        var matches = [];
-        var author = string.toLowerCase();
+    debug.searchQuotes = (string) => {
+        let matches = [];
+        const author = string.toLowerCase();
 
-        for (var i = 0; i < quotes.length; i++) {
+        for (let i = 0; i < quotes.length; i++) {
             if (author === quotes[i].author.toLowerCase()) matches.push(i);
         }
 
