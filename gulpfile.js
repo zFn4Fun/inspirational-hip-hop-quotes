@@ -1,6 +1,8 @@
 const gulp = require('gulp');
 const babel = require("gulp-babel");
-// const uglify = require('gulp-uglify');
+const uglify = require('gulp-uglify');
+const htmlmin = require('gulp-htmlmin');
+const cssnano = require('gulp-cssnano');
 const imagemin = require('gulp-imagemin');
 
 gulp.task('babel', () => {
@@ -10,13 +12,24 @@ gulp.task('babel', () => {
         }))
         .pipe(gulp.dest('dist'));
 });
-/* Need to install uglif-js it seems, for this to work.
+
 gulp.task('uglify', () => {
     gulp.src('src/*.js')
         .pipe(uglify())
         .pipe(gulp.dest('dist'));
 });
-*/
+
+gulp.task('htmlmin', () => {
+    gulp.src('src/*.html')
+        .pipe(htmlmin({collapseWhitespace: true}))
+        .pipe(gulp.dest('dist'));
+});
+
+gulp.task('cssnano', () => {
+    gulp.src('src/*.css')
+        .pipe(cssnano())
+        .pipe(gulp.dest('dist'));
+});
 
 gulp.task('imagemin', () => {
     gulp.src('src/img/*')
