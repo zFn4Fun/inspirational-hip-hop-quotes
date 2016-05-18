@@ -92,7 +92,7 @@
         author: "Jay-Z",
         imgSrc: "jayz.jpeg"
     }, {
-        quote: "Turnin' nothin' into somethin' is God work, and you get nothin' without struggle and hard work.",
+        quote: "Turning nothing into something is God work, and you get nothing without struggle and hard work.",
         author: "Nas",
         imgSrc: "nas.jpg"
     }, {
@@ -100,7 +100,7 @@
         author: "Damnian Marley",
         imgSrc: "damnianmarley.jpg"
     }, {
-        quote: "You can make the future, but it starts leaving the past.",
+        quote: "You can make the future, but it starts with leaving the past.",
         author: "Immortal Technique",
         imgSrc: "immortaltechnique.jpg"
     }, {
@@ -108,7 +108,7 @@
         author: "Big K.R.I.T.",
         imgSrc: "bigkrit.jpg"
     }, {
-        quote: "Apply yourself to supply your wealth, only Limitations you’ll ever have are those you Place upon yourself.",
+        quote: "Apply yourself to supply your wealth, only limitations you'll ever have are those that you place upon yourself.",
         author: "Kendrick Lamar",
         imgSrc: "kdot.jpg"
     }, {
@@ -119,6 +119,36 @@
         quote: "Get up off that slave ship, build your own pyramids, write your own hieroglyphs.",
         author: "Kendrick Lamar",
         imgSrc: "kdot.jpg"
+    }, {
+        quote: "We hurt people that love us, love people that hurt us.",
+        author: "Kendrick Lamar",
+        imgSrc: "kdot.jpg"
+    }, {
+        quote: "We all get distracted, the question is, would you bounce back or bounce backwards?",
+        author: "Kendrick Lamar",
+        imgSrc: "kdot.jpg"
+    }, {
+        quote: "True love is so hard to find, and they say that once you found it you lost your mind.",
+        author: "Capital Steez",
+        imgSrc: "steelo.jpg"
+    }, {
+        quote: "You're never too old to take baby steps.",
+        author: "Capital Steez",
+        imgSrc: "steelo.jpg"
+    }, {
+        quote: "I seen a baby cry then seconds later she laughed. The beauty of life, the pain never lasts",
+        author: "J. Cole",
+        imgSrc: "jcole.png"
+    }, {
+        quote: "To appreciate the sun you gotta know what rain is.",
+        author: "J. Cole",
+        imgSrc: "jcole.png"
+    }, {
+        quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere",
+        author: "J. Cole",
+        imgSrc: "jcole.png"
+    }, {
+
     }];
     // The variable where the array index of the last quote used is stored.
     let lastQuote;
@@ -178,7 +208,7 @@
                 updatePage(selectedQuote);
             }, 1000);
         }
-    }
+    };
 
     // Handles the update of the page content (quote, author and background
     // image).
@@ -255,7 +285,7 @@
     };
 
     // Searches for the author in the quotes array and returns the position of
-    // his quotes.
+    // all his quotes.
     debug.searchQuotes = (string) => {
         let matches = [];
         const author = string.toLowerCase();
