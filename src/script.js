@@ -123,10 +123,10 @@
     let lastQuote;
     let repeated = 0;
 
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", () => {
         console.log("dom loaded");
         randomise("firstload");
-        document.addEventListener("mouseup", function(eventData) {
+        document.addEventListener("mouseup", (eventData) => {
             // Change the quote only on left click.
             if (eventData.button === 0) randomise();
         }, false);
@@ -147,10 +147,10 @@
             console.log("rerolling - " + repeated);
         } else {
             document.getElementsByClassName("island")[0].style.opacity = 0;
-            setTimeout(function() {
+            setTimeout(() => {
                 updateTwitter(quotes[selectedQuote].quote);
             }, 700);
-            setTimeout(function() {
+            setTimeout(() => {
                 document.getElementsByClassName("island")[0].style.opacity = 1;
                 console.log(selectedQuote);
                 lastQuote = selectedQuote;
