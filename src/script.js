@@ -120,36 +120,57 @@
         author: "Kendrick Lamar",
         imgSrc: "kdot.jpg"
     }];
+    // The variable where the array index of the last quote used is stored.
     let lastQuote;
-    let repeated = 0;
 
     document.addEventListener("DOMContentLoaded", () => {
         console.log("dom loaded");
         randomise("firstload");
+        // Add an event listener that calls randomise() on mouseup.
         document.addEventListener("mouseup", (eventData) => {
-            // Change the quote only on left click.
+            // But only on left click.
             if (eventData.button === 0) randomise();
         }, false);
+        // Similar to the one above, but for touch.
         document.addEventListener("touchend", randomise, false);
     });
 
+    // The core of the app.
+    // Takes on paramater ("fistload" - which is used only on first load).
     let randomise = (type) => {
         console.log("randomise fired");
+        // Selects one of the quotes randomly.
         const selectedQuote = Math.floor(Math.random() * quotes.length);
 
+        // If the page is loading for the first time there is no content to
+        // fade out, so just fade in the content, update it and store the index
+        // value of the current quote used.
         if (type === "firstload") {
+            // The fade effects are handled by CSS' transition property, so we
+            // only need to change the opacity values.
             document.getElementsByClassName("island")[0].style.opacity = 1;
             updatePage(selectedQuote);
+            // Store the index value of the current quote in lastQuote for
+            // the next time.
             lastQuote = selectedQuote;
+        // Otherwise it means we already had a quote up, so check to see if
+        // the new one is the same as the lastQuote points to. If so, reroll.
         } else if (lastQuote === selectedQuote) {
             randomise();
-            repeated++;
-            console.log("rerolling - " + repeated);
+            console.log("rerolling");
+        // If it's not the same, fade out the content, update it and the twitter
+        // button, and fade it in.
         } else {
             document.getElementsByClassName("island")[0].style.opacity = 0;
+            // Call the twitter updating function with a delay so the user
+            // won't see how the element gets removed and created again. It
+            // all happens after the element faded out, but not before it fades
+            // in.
             setTimeout(() => {
                 updateTwitter(quotes[selectedQuote].quote);
             }, 700);
+            // After a 1s delay update the content, fade it in, and store the
+            // index value of the current quote.
             setTimeout(() => {
                 document.getElementsByClassName("island")[0].style.opacity = 1;
                 console.log(selectedQuote);
@@ -159,42 +180,59 @@
         }
     }
 
+    // Handles the update of the page content (quote, author and background
+    // image).
+    // Takes one parameter, the quote object selected through randomise().
     let updatePage = (selectedQuote) => {
         document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
         document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/" + quotes[selectedQuote].imgSrc + "')";
     };
 
+    // Updates the tweet message by removing the twitter button entirely, and
+    // reconstructing it. Couldn't find a better way to handle dynamic tweet
+    // messages.
+    // It takes one parameter, the current quote, that is used as the tweet
+    // message (data-text) of the new button.
     let updateTwitter = (selectedQuote) => {
         console.log("called updateTwitter");
+        // If the twitter button was already constructed, destroy and rebuild
+        // it.
         if (document.querySelector("iframe")) {
-            var parent = document.getElementById("btn-twitter");
-            var newBtn = document.createElement("a");
+            // The parent div in which the button is stored.
+            const parent = document.getElementById("btn-twitter");
+            // Create the skeleton of the new button.
+            const newBtn = document.createElement("a");
             // FIXME: using lastChild seem to be a bit more effective jsperf.com/innerhtml-vs-removechild/15
             /*
             while (node.hasChildNodes()) {
                 node.removeChild(node.lastChild);
             }
             */
-            // Empty the nodes.
+            // Empties the nodes of the parent div.
             parent.textContent = "";
 
+            // Update the skeleton of the button with data-text, data-hashtag,
+            // class, href and the text on the button.
             newBtn.dataset.text = '"' + selectedQuote + '"';
             newBtn.dataset.hashtags = "HHQuotes";
-
             newBtn.className = "twitter-share-button";
             newBtn.href = "http://twitter.com/share";
             newBtn.innerHTML = "Tweet";
 
+            // Append the skeleton to its parent.
             parent.appendChild(newBtn);
+            // After everything is set, call the twitter method that constructs
+            // the button.
             twttr.widgets.load();
             console.log("widget found");
+        // Otherwise just update the tweet message (data-text).
         } else {
             document.getElementsByClassName("twitter-share-button")[0].dataset.text = '"' + quote + '"';
         }
-    }
+    };
 
-    // Debug
+    // Debug - things used in development.
     window.debug = window.debug || {};
 
     // Checks to see if any of the quotes are bigger than 130 characters long.
@@ -211,7 +249,7 @@
         return removable;
     };
 
-    // Returns the number of quotes inside the quotes array.
+    // Returns the number of objects inside the quotes array.
     debug.countQuotes = () => {
         return quotes.length;
     };
