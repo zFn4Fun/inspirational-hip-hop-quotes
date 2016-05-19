@@ -147,6 +147,10 @@
         quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere",
         author: "J. Cole",
         imgSrc: "jcole.png"
+    }, {
+        quote: "Hell is not a place you go if you're not a Christian, it's the failure of your life's greatest ambition.",
+        author: "Immortal Technique",
+        imgSrc: "immortaltechnique.jpg"
     }];
     // The variable where the array index of the last quote used is stored.
     let lastQuote;
