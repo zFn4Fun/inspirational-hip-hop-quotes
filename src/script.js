@@ -97,8 +97,8 @@
         imgSrc: "nas.jpg"
     }, {
         quote: "The victory’s found in truth, like innocence found in youth, self defeat is your own dispute",
-        author: "Damnian Marley",
-        imgSrc: "damnianmarley.jpg"
+        author: "Damian Marley",
+        imgSrc: "damianmarley.jpg"
     }, {
         quote: "You can make the future, but it starts with leaving the past.",
         author: "Immortal Technique",
@@ -147,8 +147,6 @@
         quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere",
         author: "J. Cole",
         imgSrc: "jcole.png"
-    }, {
-
     }];
     // The variable where the array index of the last quote used is stored.
     let lastQuote;
