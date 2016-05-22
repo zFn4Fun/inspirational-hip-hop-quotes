@@ -160,7 +160,8 @@
     });
 
     // The core of the app.
-    // Takes on paramater ("fistload" - which is used only on first load).
+    // Takes one paramater ("fistload" - which is used only when the page loads
+    // for the first time).
     let randomise = (type) => {
         console.log("randomise fired");
         // Selects one of the quotes randomly.
@@ -174,8 +175,8 @@
             // only need to change the opacity values.
             document.getElementsByClassName("island")[0].style.opacity = 1;
             updatePage(selectedQuote);
-            // Store the index value of the current quote in lastQuote for
-            // the next time.
+            // Store the index value of the current quote in lastQuote for next
+            // time.
             lastQuote = selectedQuote;
         // Otherwise it means we already had a quote up, so check to see if
         // the new one is the same as the lastQuote points to. If so, reroll.
@@ -216,8 +217,8 @@
     // Updates the tweet message by removing the twitter button entirely, and
     // reconstructing it. Couldn't find a better way to handle dynamic tweet
     // messages.
-    // It takes one parameter, the current quote, that is used as the tweet
-    // message (data-text) of the new button.
+    // It takes one parameter, the current quote string, that is used as the
+    // tweet message (data-text) of the new button.
     let updateTwitter = (selectedQuote) => {
         console.log("called updateTwitter");
         // If the twitter button was already constructed, destroy and rebuild
