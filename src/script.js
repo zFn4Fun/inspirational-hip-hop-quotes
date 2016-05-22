@@ -64,14 +64,6 @@
         author: "Ab-Soul",
         imgSrc: "absoul.jpg"
     }, {
-        quote: "",
-        author: "Isaiah Rashad",
-        imgSrc: "isaiah.png"
-    }, {
-        quote: "",
-        author: "Flatbush Zombies",
-        imgSrc: "fbz.jpg"
-    }, {
         quote: "You can make something of your life, it just depends on you drive.",
         author: "Eminem",
         imgSrc: "eminem.jpg"
