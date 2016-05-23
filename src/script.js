@@ -128,7 +128,7 @@
         author: "Capital Steez",
         imgSrc: "steelo.jpg"
     }, {
-        quote: "I seen a baby cry then seconds later she laughed. The beauty of life, the pain never lasts",
+        quote: "I seen a baby cry then seconds later she laughed. The beauty of life, the pain never lasts.",
         author: "J. Cole",
         imgSrc: "jcole.jpg"
     }, {
@@ -136,7 +136,7 @@
         author: "J. Cole",
         imgSrc: "jcole.jpg"
     }, {
-        quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere",
+        quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere.",
         author: "J. Cole",
         imgSrc: "jcole.jpg"
     }, {
@@ -228,12 +228,6 @@
             const parent = document.getElementById("btn-twitter");
             // Create the skeleton of the new button.
             const newBtn = document.createElement("a");
-            // FIXME: using lastChild seem to be a bit more effective jsperf.com/innerhtml-vs-removechild/15
-            /*
-            while (node.hasChildNodes()) {
-                node.removeChild(node.lastChild);
-            }
-            */
             // Empties the nodes of the parent div.
             parent.textContent = "";
 
@@ -291,5 +285,29 @@
 
         if (matches.length < 1) return "No matches found";
         return matches;
+    };
+
+    // Returns the length, position and the string of the shortest quote, for
+    // responsivness testing.
+    debug.shortestQuote = () => {
+        let temp = 0;
+
+        for (let i in quotes) {
+            if (quotes[temp].quote.length > quotes[i].quote.length) temp = i;
+        }
+
+        return "length: " + quotes[temp].quote.length + ", pos: " + temp + " - " + quotes[temp].quote;
+    };
+
+    // Returns the length, position and the string of the shortest quote, for
+    // responsivness testing.
+    debug.longestQuote = () => {
+        let temp = 0;
+
+        for (let i in quotes) {
+            if (quotes[temp].quote.length < quotes[i].quote.length) temp = i;
+        }
+
+        return "length: " + quotes[temp].quote.length + ", pos: " + temp + " - " + quotes[temp].quote;
     };
 })();
