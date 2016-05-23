@@ -58,7 +58,7 @@
     }, {
         quote: "Follow your heart. Don't follow what you've been told you're supposed to do.",
         author: "J. Cole",
-        imgSrc: "jcole.png"
+        imgSrc: "jcole.jpg"
     }, {
         quote: "Don't be dethroned by these systems of control, just keep your fingers crossed and get them locks off your soul.",
         author: "Ab-Soul",
@@ -78,11 +78,11 @@
     }, {
         quote: "I will not lose, for even in defeat, there’s a valuable lesson learned, so it evens up for me.",
         author: "Jay-Z",
-        imgSrc: "jayz.jpeg"
+        imgSrc: "jayz.jpg"
     }, {
         quote: "Remind yourself, nobody built like you, you design yourself.",
         author: "Jay-Z",
-        imgSrc: "jayz.jpeg"
+        imgSrc: "jayz.jpg"
     }, {
         quote: "Turning nothing into something is God work, and you get nothing without struggle and hard work.",
         author: "Nas",
@@ -106,7 +106,7 @@
     }, {
         quote: "They say anything's possible, you gotta dream like you never seen obstacles.",
         author: "J. Cole",
-        imgSrc: "jcole.png"
+        imgSrc: "jcole.jpg"
     }, {
         quote: "Get up off that slave ship, build your own pyramids, write your own hieroglyphs.",
         author: "Kendrick Lamar",
@@ -130,15 +130,15 @@
     }, {
         quote: "I seen a baby cry then seconds later she laughed. The beauty of life, the pain never lasts",
         author: "J. Cole",
-        imgSrc: "jcole.png"
+        imgSrc: "jcole.jpg"
     }, {
         quote: "To appreciate the sun you gotta know what rain is.",
         author: "J. Cole",
-        imgSrc: "jcole.png"
+        imgSrc: "jcole.jpg"
     }, {
         quote: "Keep grinding boy, your life can change in one year. And even when it's dark out, the sun is shining somewhere",
         author: "J. Cole",
-        imgSrc: "jcole.png"
+        imgSrc: "jcole.jpg"
     }, {
         quote: "Hell is not a place you go if you're not a Christian, it's the failure of your life's greatest ambition.",
         author: "Immortal Technique",
