@@ -3,7 +3,8 @@ html, body {
 }
 
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: 300;
   color: #FFF;
   text-align: center;
   margin: 0;
@@ -31,7 +32,7 @@ a:hover {
   opacity: 1;
 }
 
-p, h2 {
+p {
   margin: 0;
   padding: 0;
 }
@@ -58,7 +59,6 @@ p, h2 {
 }
 
 .quote {
-  font-weight: 300;
   font-size: 28px;
 }
 
