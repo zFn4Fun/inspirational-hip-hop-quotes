@@ -24,4 +24,5 @@ The background images were taken from various websites via Google.
 
 ## License
 
-The code is licensed under the terms of the GNU General Public License.
+The code is licensed under the terms of the
+[MIT license](https://github.com/zFn4Fun/inspirational-hip-hop-quotes/blob/master/LICENSE.md).
