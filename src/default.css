@@ -21,6 +21,16 @@ body {
   user-select: none;
 }
 
+a {
+  text-decoration: none;
+  color: rgb(222, 237, 229);
+}
+
+a:hover {
+  text-decoration: underline;
+  opacity: 1;
+}
+
 p, h2 {
   margin: 0;
   padding: 0;
@@ -33,15 +43,18 @@ p, h2 {
   left: 50%;
   transform: translate(-50%, -50%);
   text-shadow: 1px 1px #22313F;
+  transition: opacity 1s ease;
+}
+
+.quote-area {
   -webkit-user-select: text;
   -moz-user-select: text;
   -khtml-user-select: text;
   -ms-user-select: text;
-  user-select: none;
+  user-select: text;
   background-color: rgba(0, 0, 0, 0.26);
   border-radius: 8px;
   padding: 6px;
-  transition: opacity 1s ease;
 }
 
 .quote {
@@ -56,14 +69,30 @@ p, h2 {
   margin-right: 10px;
 }
 
-.social-btns {
+.row {
+  margin-top: 5px;
+}
+
+.row-item {
+  display: inline-block;
+  vertical-align: top;
+  width: 48.5%;
+}
+
+.row-item:first-child {
   text-align: left;
-  margin-left: 10px;
+}
+
+.row-item:last-child {
+    text-align: right;
+    opacity: 0.5;
+    margin-right: 5px;
 }
 
 .social-btn {
   display: inline-block;
   vertical-align: top;
+  margin-left: 5px;
 }
 
 @media (max-width: 768px) {
