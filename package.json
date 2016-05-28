@@ -1,7 +1,7 @@
 {
   "name": "inspirational-hip-hop-quotes",
   "version": "1.0.0",
-  "description": "Random Quote Machine",
+  "description": "A random quote app composed of inspirational quotes from various Hip Hop artists.",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/zFn4Fun/inspirational-hip-hop-quotes.git"
   },
   "author": "Mihai Dinu",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/zFn4Fun/inspirational-hip-hop-quotes/issues"
   },
