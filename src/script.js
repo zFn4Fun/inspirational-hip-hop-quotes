@@ -178,8 +178,8 @@
             // Store the index value of the current quote in lastQuote for next
             // time.
             lastQuote = selectedQuote;
-        // Otherwise it means we already had a quote up, so check to see if
-        // the new one is the same as the lastQuote points to. If so, reroll.
+        // Otherwise it means we already had a quote displayed, so check to see
+        // if the new one is the same as the lastQuote points to. If so, reroll.
         } else if (lastQuote === selectedQuote) {
             randomise();
             console.log("rerolling");
@@ -251,6 +251,7 @@
         }
     };
 
+    /*
     // Debug - things used in development.
     window.debug = window.debug || {};
 
@@ -310,4 +311,5 @@
 
         return "length: " + quotes[temp].quote.length + ", pos: " + temp + " - " + quotes[temp].quote;
     };
+    */
 })();
