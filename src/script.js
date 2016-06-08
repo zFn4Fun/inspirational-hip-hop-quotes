@@ -147,22 +147,10 @@
     // The variable where the array index of the last quote used is stored.
     let lastQuote;
 
-    document.addEventListener("DOMContentLoaded", () => {
-        console.log("dom loaded");
-        randomise("firstload");
-        // Add an event listener that calls randomise() on mouseup.
-        document.addEventListener("mouseup", (eventData) => {
-            // But only on left click.
-            if (eventData.button === 0) randomise();
-        }, false);
-        // Similar to the one above, but for touch.
-        document.addEventListener("touchend", randomise, false);
-    });
-
     // The core of the app.
     // Takes one paramater ("fistload" - which is used only when the page loads
     // for the first time).
-    let randomise = (type) => {
+    const randomise = (type) => {
         console.log("randomise fired");
         // Selects one of the quotes randomly.
         const selectedQuote = Math.floor(Math.random() * quotes.length);
@@ -208,7 +196,7 @@
     // Handles the update of the page content (quote, author and background
     // image).
     // Takes one parameter, the quote object selected through randomise().
-    let updatePage = (selectedQuote) => {
+    const updatePage = (selectedQuote) => {
         document.getElementById("quote").innerHTML = "&ldquo;" + quotes[selectedQuote].quote + "&rdquo;";
         document.getElementById("author").innerHTML = "- " + quotes[selectedQuote].author;
         document.body.style.backgroundImage = "linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/" + quotes[selectedQuote].imgSrc + "')";
@@ -219,7 +207,7 @@
     // messages.
     // It takes one parameter, the current quote string, that is used as the
     // tweet message (data-text) of the new button.
-    let updateTwitter = (selectedQuote) => {
+    const updateTwitter = (selectedQuote) => {
         console.log("called updateTwitter");
         // If the twitter button was already constructed, destroy and rebuild
         // it.
@@ -250,6 +238,15 @@
             document.getElementsByClassName("twitter-share-button")[0].dataset.text = '"' + quote + '"';
         }
     };
+
+    randomise("firstload");
+    // Add an event listener that calls randomise() on mouseup.
+    document.addEventListener("mouseup", (eventData) => {
+        // But only on left click.
+        if (eventData.button === 0) randomise();
+    }, false);
+    // Similar to the one above, but for touch.
+    document.addEventListener("touchend", randomise, false);
 
     /*
     // Debug - things used in development.
