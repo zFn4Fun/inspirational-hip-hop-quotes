@@ -107,15 +107,19 @@ p {
     font-size: 17px;
 }
 
+  .row-item {
+    width: 100%;
+  }
+
   .row-item:first-child {
     margin-left: 0;
-    max-width: 38.5%;
+    text-align: center;
   }
 
   .row-item:last-child {
     margin-right: 0;
     font-size: 14px;
-    width: 59%;
+    text-align: center;
   }
 
   .social-btn {
