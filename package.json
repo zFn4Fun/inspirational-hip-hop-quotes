@@ -1,7 +1,7 @@
 {
   "name": "inspirational-hip-hop-quotes",
   "version": "1.0.0",
-  "description": "A random quote app composed of inspirational quotes from various Hip Hop artists.",
+  "description": "A random quotes app composed of inspirational quotes from various Hip Hop artists.",
   "main": "script.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

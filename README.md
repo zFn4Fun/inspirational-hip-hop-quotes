@@ -2,9 +2,9 @@
 
 [Live Demo](http://zfn4fun.github.io/projects/hhquotes)
 
-Inspirational Hip Hop Quotes is a random quote app composed of inspirational
+Inspirational Hip Hop Quotes is a random quotes app composed of inspirational
 quotes from various Hip Hop artists that came up from nothing and ended up
-"making it", as a reminder that everything is possible.
+“making it”, as a reminder that everything is possible.
 
 Every quote is accompanied by a background image of the artist it originated
 from.
